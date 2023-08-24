@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 
-# this function makes new row
+# this function makes new row with your data
 def add_note(base: pd.DataFrame):
     # need to make separate data later, it for faster work
     new_note = input('\nEnter a list element separated '
@@ -95,7 +95,7 @@ def menu():
           'stop - stop program and save or not database\n')
 
 
-# this func clears page from trash
+# this func clears console page from trash
 def cls():
     os.system('cls')
 

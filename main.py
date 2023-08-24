@@ -12,10 +12,10 @@ col = ['surname', 'name', 'patronymic',
 db = pd.DataFrame(columns=col)
 '''
 
-# reading from csv database
+# reading from csv database that was made one time higher and saved
 db = pd.read_csv('test_db_csv.csv', index_col=0)
 
-# new data for test for the first time
+# new data for test for the first time(than i added datas with this program)
 '''
 db.loc[len(db.index)] = ['Kurosh', 'Danila', 'Dmitriyevich',
                          'Big Company', '84997770707', '88005553535']
@@ -25,6 +25,7 @@ db.loc[len(db.index)] = ['Kurosh', 'Danila', 'Dmitriyevich',
 print('\nHello, its telephone directory!')
 
 # main circle with all functions from menu
+# (all functions are in another file named functions_telephone_directory)
 while True:
     user_input = input('\nWhat you wanna do? Write it here '
                        '(if you want look at the commands - write "menu"): ')
