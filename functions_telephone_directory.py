@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 
+
 def add_note(base: pd.DataFrame):
     # need to make separate data later, it for faster work
     new_note = input('\nEnter a list element separated by ", ": ')
@@ -62,6 +63,17 @@ def find_note(base: pd.DataFrame):
 
 
 def menu():
+    print('\nOptions:\n'
+          'print - print all data\n'
+          'add - add new data\n'
+          'delete - delete data\n'
+          'edit - edit data\n'
+          'find - find data\n'
+          'cls - clear screen\n'
+          'stop - stop program and save or not database\n')
+
+
+def pagination(base: pd.DataFrame):
     pass
 
 

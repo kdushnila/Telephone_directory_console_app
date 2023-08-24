@@ -26,7 +26,7 @@ print('\nHello, its telephone directory!')
 # main
 while True:
     user_input = input('\nWhat you wanna do? Write it here '
-                       '(if you want to stop, write "stop"): ')
+                       '(if you want look at the commands - write "menu"): ')
     if user_input == 'print':
         print(db.to_string())
     elif user_input == 'add':
@@ -39,6 +39,8 @@ while True:
         find_note(db)
     elif user_input == 'cls':
         cls()
+    elif user_input == 'menu':
+        menu()
     elif user_input == 'stop':
         decide = input('\nDo you want to save file? yes/no: ')
         if decide == 'yes':
@@ -47,6 +49,6 @@ while True:
         elif decide == 'no':
             break
         else:
-            print('\ni dont understand you')
+            print('\nI dont understand you')
     else:
-        print('\ni dont understand you')
+        print('\nI dont understand you')
