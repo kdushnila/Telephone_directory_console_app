@@ -1,9 +1,9 @@
-# test program for phone book
+# test program for telephone directory
 import pandas as pd
-import os
 
 from functions_telephone_directory import (add_note, delete_note,
-                                           edit_note, menu, find_note, cls)
+                                           edit_note, menu,
+                                           find_note, pagination, cls)
 
 # new columns and dataframe for the first time, then it's no need after first save
 '''
@@ -21,14 +21,15 @@ db.loc[len(db.index)] = ['Kurosh', 'Danila', 'Dmitriyevich',
                          'Big Company', '84997770707', '88005553535']
 # print(db.to_string())
 '''
-
+# Hello from program
 print('\nHello, its telephone directory!')
-# main
+
+# main circle with all functions from menu
 while True:
     user_input = input('\nWhat you wanna do? Write it here '
                        '(if you want look at the commands - write "menu"): ')
     if user_input == 'print':
-        print(db.to_string())
+        print(db.head().to_string())
     elif user_input == 'add':
         add_note(db)
     elif user_input == 'delete':
@@ -41,6 +42,8 @@ while True:
         cls()
     elif user_input == 'menu':
         menu()
+    elif user_input == 'page':
+        pagination(db)
     elif user_input == 'stop':
         decide = input('\nDo you want to save file? yes/no: ')
         if decide == 'yes':
