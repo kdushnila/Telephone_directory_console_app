@@ -1,5 +1,5 @@
 import pandas as pd
-
+import os
 
 def add_note(base: pd.DataFrame):
     # need to make separate data later, it for faster work
@@ -34,7 +34,7 @@ def edit_note(base: pd.DataFrame):
 def find_note(base: pd.DataFrame):
     find_criteria = input('\nSurname - 1,\nName - 2,\nPatronymic - 3,\nOrganization name - 4,\n'
                           'Work phone number - 5,\nPersonal phone number - 6\n'
-                          'Please, enter number, you want to find by: ')
+                          '\nPlease, enter number, you want to find by: ')
 
     if find_criteria.isdigit():
         find_criteria = int(find_criteria)
@@ -58,9 +58,12 @@ def find_note(base: pd.DataFrame):
         else:
             print('\nError! Wrong number.')
     else:
-        print('Error! Wrong number!')
+        print('\nError! Wrong number!')
 
 
 def menu():
     pass
 
+
+def cls():
+    os.system('cls')

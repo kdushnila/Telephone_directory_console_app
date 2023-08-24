@@ -1,8 +1,9 @@
 # test program for phone book
 import pandas as pd
+import os
 
 from functions_telephone_directory import (add_note, delete_note,
-                                           edit_note, menu, find_note)
+                                           edit_note, menu, find_note, cls)
 
 # new columns and dataframe for the first time, then it's no need after first save
 '''
@@ -36,6 +37,8 @@ while True:
         edit_note(db)
     elif user_input == 'find':
         find_note(db)
+    elif user_input == 'cls':
+        cls()
     elif user_input == 'stop':
         decide = input('\nDo you want to save file? yes/no: ')
         if decide == 'yes':
