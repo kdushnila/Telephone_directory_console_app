@@ -4,20 +4,28 @@ import os
 
 def add_note(base: pd.DataFrame):
     # need to make separate data later, it for faster work
-    new_note = input('\nEnter a list element separated by ", ": ')
-    new_note = new_note.split(sep=', ')
-    print(f"\nYou added {new_note} to telephone directory")
-    base.loc[len(base.index)] = new_note
+    new_note = input('\nEnter a list element separated '
+                     'by ", " ("Surname", "Name", "Patronymic", '
+                     '"Organisation name", "Work phone number", "Personal phone number"): ')
+    try:
+        new_note = new_note.split(sep=', ')
+        print(f"\nYou added {new_note} to telephone directory")
+        base.loc[len(base.index)] = new_note
+    except ValueError:
+        print('Error! You entered incorrect data')
 
 
 def delete_note(base: pd.DataFrame):
     # function for delete by index. You can delete few or one data
     delete_index = (input('\nEnter index of data(if you want to delete few rows, '
                           'write it with space): ')).split(sep=' ')
-    delete_index = [int(i) for i in delete_index]
-    base.drop(labels=delete_index, axis=0, inplace=True)
-    base.reset_index(drop=True, inplace=True)
-    print(f'\nYou deleted data by {delete_index} index.')
+    try:
+        delete_index = [int(i) for i in delete_index]
+        base.drop(labels=delete_index, axis=0, inplace=True)
+        base.reset_index(drop=True, inplace=True)
+        print(f'\nYou deleted data by {delete_index} index.')
+    except ValueError:
+        print('Error! You entered incorrect data')
 
 
 def edit_note(base: pd.DataFrame):
